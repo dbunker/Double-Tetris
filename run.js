@@ -55,6 +55,7 @@ function begin(){
 	maxX = 32;
 	maxY = 10;
 	timeMili = 300;
+	curTimeMili = 300;
 
 	randomPiece();	
 	initBoard();
@@ -103,7 +104,7 @@ function timedCount(){
 
 	// the frames should match between the clients, if I am too much faster, slow down a bit
 	if(myVars.frame - partnerVars.frame > 1){
-		setTimeout("timedCount()",timeMili);
+		setTimeout("timedCount()",curTimeMili);
 		return;
 	}
 
@@ -136,11 +137,10 @@ function timedCount(){
 	myVars.frame++;
 
 	// make game harder as time passes
-	if(myVars.frame % 100 == 0)
-		timeMili--;
+	curTimeMili = timeMili - Math.floor(myVars.frame/100)
 
 	if(running == 1)
-		setTimeout("timedCount()",timeMili);
+		setTimeout("timedCount()",curTimeMili);
 }
 
 function setReversePiece(toSet){

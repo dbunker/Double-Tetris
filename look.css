@@ -1,0 +1,15 @@
+table{
+	border:1px #000000 solid;
+	border-collapse: collapse;
+}
+
+td{
+	width: 25px;
+	height: 25px;
+	background-color: #FFFFFF;	
+	border-collapse: collapse;
+}
+
+#set{
+	background-color: #000000;
+}

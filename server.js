@@ -69,7 +69,10 @@ function loss(clientId,partnerId){
 }
 
 nowjs.on('disconnect', function(){
-	loss(this.user.clientId,this.now.partnerId);
+	if(this.user.clientId === oddPlayer)
+		oddPlayer = null;
+	else
+		loss(this.user.clientId,this.now.partnerId);
 });
 
 everyone.now.sendLoss = function(){

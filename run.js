@@ -1,7 +1,7 @@
 
 $(document).ready(function(){
 
-	$("#hold").html("Wait for opponent.");
+	$("#hold").html("Wait for opponent.<br><br>To test, go to this same address from another tab or browser window.");
 	running = 1;
 	
 	now.start = function(){

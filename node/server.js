@@ -1,34 +1,18 @@
+// multiplayer tetris node.js/now.js app
+
 var fs = require('fs');
 var http = require("http");
 var url = require("url");
 
-var server = http.createServer(function(req, response){
-	
-	var pathname = url.parse(req.url).pathname;
-    	console.log("Request for " + pathname + " received.");
-	var contType = 'text/html'
-
-	if(pathname === '/run.js')
-		contType = 'text/javascript'
-	else if(pathname === '/look.css')
-		contType = 'text/css'
-	else{
-		response.writeHead(404, {'Content-Type':'text/html'});
-		response.end();
-		return;
-	}
-
-	fs.readFile(__dirname + pathname, function(err, data){
-		response.writeHead(200, {'Content-Type':contType}); 
-		response.write(data);  
-		response.end();
-	});
-});
-server.listen(8585);
+var port = process.argv[2];
+var server = http.createServer();
+server.listen(port);
 
 var nowjs = require("now");
 var everyone = nowjs.initialize(server);
 var oddPlayer = null;
+
+console.log("Start Tetris Port: " + port);
 
 function tryConn(clientId){
 

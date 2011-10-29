@@ -8,9 +8,7 @@ var server = http.createServer(function(req, response){
     	console.log("Request for " + pathname + " received.");
 	var contType = 'text/html'
 
-	if(pathname === '/page.html')
-		contType = 'text/html'
-	else if(pathname === '/run.js')
+	if(pathname === '/run.js')
 		contType = 'text/javascript'
 	else if(pathname === '/look.css')
 		contType = 'text/css'

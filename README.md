@@ -11,6 +11,6 @@ Example Player Two's Board
 
 Prototype node load balancer can be found in the run folder.
 
-More information available here: http://dbunker.github.io/blog/2011/10/29/nowjs/
+More information available here: http://www.dbunker.io/blog/2011/10/29/nowjs/
 
-Game can be played via Heroku app here: http://dbunker.github.io/tetris/
+Game can be played via Heroku app here: http://www.dbunker.io/tetris/
